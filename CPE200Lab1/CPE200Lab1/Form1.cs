@@ -90,5 +90,10 @@ namespace CPE200Lab1
                 lblDisplay.Text = (float.Parse(lblDisplay.Text) / 100).ToString();
             }
         }
+
+        private void btnSign_Click(object sender, EventArgs e)
+        {
+            lblDisplay.Text = (float.Parse(lblDisplay.Text) * -1).ToString();
+        }
     }
 }
