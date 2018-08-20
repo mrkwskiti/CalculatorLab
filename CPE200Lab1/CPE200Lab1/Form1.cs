@@ -104,5 +104,13 @@ namespace CPE200Lab1
                 lblDisplay.Text = "0";
             }
         }
+
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            if(lblDisplay.Text.IndexOf(".") == -1)
+            {
+                lblDisplay.Text += ".";
+            }
+        }
     }
 }
