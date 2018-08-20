@@ -78,5 +78,17 @@ namespace CPE200Lab1
             lblDisplay.Text = firstOperand;
             btn_Clicked = true;
         }
+
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+            if(operation == "+" || operation == "-")
+            {
+                lblDisplay.Text = (float.Parse(lblDisplay.Text) / 100 * float.Parse(firstOperand)).ToString();
+            }
+            else
+            {
+                lblDisplay.Text = (float.Parse(lblDisplay.Text) / 100).ToString();
+            }
+        }
     }
 }
