@@ -13,12 +13,22 @@ namespace CPE200Lab1
     public partial class Form1 : Form
     {
         string firstOperand;
+        string secondOperand; 
         bool btn_Clicked = false;
         string operation;
 
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            lblDisplay.Text = "0";
+            firstOperand = null;
+            secondOperand = null;
+            btn_Clicked = false;
+            operation = null;
         }
 
         private void btnNumber_Click(object sender, EventArgs e)
@@ -46,23 +56,26 @@ namespace CPE200Lab1
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            float result = 0;
+            if (!btn_Clicked)
+                secondOperand = lblDisplay.Text;
+            float result = float.Parse(firstOperand);
             switch (operation)
             {
                 case "+":
-                    result = float.Parse(firstOperand) + float.Parse(lblDisplay.Text);
+                    result += float.Parse(secondOperand);
                     break;
                 case "-":
-                    result = float.Parse(firstOperand) - float.Parse(lblDisplay.Text);
+                    result -= float.Parse(secondOperand);
                     break;
                 case "X":
-                    result = float.Parse(firstOperand) * float.Parse(lblDisplay.Text);
+                    result *= float.Parse(secondOperand);
                     break;
                 case "÷":
-                    result = float.Parse(firstOperand) / float.Parse(lblDisplay.Text);
+                    result /= float.Parse(secondOperand);
                     break;
             }
-            lblDisplay.Text = Convert.ToString(result);
+            firstOperand = Convert.ToString(result);
+            lblDisplay.Text = firstOperand;
             btn_Clicked = true;
         }
     }
