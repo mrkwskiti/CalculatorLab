@@ -14,7 +14,8 @@ namespace CPE200Lab1
     {
         string firstOperand;
         string secondOperand; 
-        bool btn_Clicked = false;
+        bool btnOperator_Clicked = false;
+        bool btnEqual_Clicked = false;
         string operation;
 
         public Form1()
@@ -27,17 +28,18 @@ namespace CPE200Lab1
             lblDisplay.Text = "0";
             firstOperand = null;
             secondOperand = null;
-            btn_Clicked = false;
+            btnOperator_Clicked = false;
+            btnEqual_Clicked = false;
             operation = null;
         }
 
         private void btnNumber_Click(object sender, EventArgs e)
         {
         
-            if (lblDisplay.Text == "0" || btn_Clicked)
+            if (lblDisplay.Text == "0" || btnOperator_Clicked)
             {
                 lblDisplay.Text = "";
-                btn_Clicked = false;
+                btnOperator_Clicked = false;
             }
             if (lblDisplay.Text.Length < 9)
             {
@@ -50,13 +52,14 @@ namespace CPE200Lab1
         {
             Button btn = (Button)sender;
             firstOperand = lblDisplay.Text;
-            btn_Clicked = true;
+            btnOperator_Clicked = true;
+            btnEqual_Clicked = false;
             operation = btn.Text;
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            if (!btn_Clicked)
+            if (!btnEqual_Clicked)
                 secondOperand = lblDisplay.Text;
             float result = float.Parse(firstOperand);
             switch (operation)
@@ -74,9 +77,8 @@ namespace CPE200Lab1
                     result /= float.Parse(secondOperand);
                     break;
             }
-            firstOperand = Convert.ToString(result);
-            lblDisplay.Text = firstOperand;
-            btn_Clicked = true;
+            lblDisplay.Text = firstOperand = Convert.ToString(result);
+            btnEqual_Clicked = true;
         }
 
         private void btnPercent_Click(object sender, EventArgs e)
