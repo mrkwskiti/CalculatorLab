@@ -95,5 +95,14 @@ namespace CPE200Lab1
         {
             lblDisplay.Text = (float.Parse(lblDisplay.Text) * -1).ToString();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            lblDisplay.Text = lblDisplay.Text.Remove(lblDisplay.Text.Length - 1);
+            if(lblDisplay.Text == "")
+            {
+                lblDisplay.Text = "0";
+            }
+        }
     }
 }
