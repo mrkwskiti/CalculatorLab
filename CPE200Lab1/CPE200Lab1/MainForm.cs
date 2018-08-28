@@ -67,6 +67,7 @@ namespace CPE200Lab1
 
         private void btnOperator_Click(object sender, EventArgs e)
         {
+            string btnOperator = ((Button)sender).Text;
             if (lblDisplay.Text is "Error")
             {
                 return;
@@ -75,18 +76,27 @@ namespace CPE200Lab1
             {
                 return;
             }
-            operate = ((Button)sender).Text;
-            switch (operate)
+            switch (btnOperator)
             {
                 case "+":
                 case "-":
                 case "X":
                 case "÷":
+                    operate = btnOperator;
                     firstOperand = lblDisplay.Text;
                     isAfterOperater = true;
                     break;
                 case "%":
                     // your code here
+                    if (isAfterOperater)
+                    {
+                        lblDisplay.Text = engine.calculate(btnOperator, firstOperand, null);
+                    }
+                    else
+                    {
+                        lblDisplay.Text = engine.calculate(btnOperator, firstOperand, lblDisplay.Text);
+                    }
+                    System.Console.WriteLine(firstOperand);
                     break;
             }
             isAllowBack = false;
