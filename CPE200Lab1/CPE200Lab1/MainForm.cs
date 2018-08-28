@@ -98,6 +98,9 @@ namespace CPE200Lab1
                     }
                     System.Console.WriteLine(firstOperand);
                     break;
+                case "√":
+                    lblDisplay.Text = engine.calculate(btnOperator, lblDisplay.Text, null);
+                    break;
             }
             isAllowBack = false;
         }
