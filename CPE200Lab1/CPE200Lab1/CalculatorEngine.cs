@@ -37,6 +37,8 @@ namespace CPE200Lab1
                     }
                 case "√":
                     return fixFractionalPart(Math.Sqrt(Convert.ToDouble(firstOperand)), maxOutputSize);
+                case "1/X":
+                    return fixFractionalPart(1 / Convert.ToDouble(firstOperand), maxOutputSize);
             }
             return "E";
         }
