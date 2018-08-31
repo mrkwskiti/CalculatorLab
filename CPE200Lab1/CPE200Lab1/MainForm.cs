@@ -12,7 +12,6 @@ namespace CPE200Lab1
 {
     public partial class MainForm : Form
     {
-        private bool hasDot;
         private bool isAllowBack;
         private bool isAfterOperater;
         private bool isAfterEqual;
@@ -24,7 +23,6 @@ namespace CPE200Lab1
         {
             lblDisplay.Text = "0";
             isAllowBack = true;
-            hasDot = false;
             isAfterOperater = false;
             isAfterEqual = false;
         }
@@ -139,10 +137,9 @@ namespace CPE200Lab1
             {
                 return;
             }
-            if (!hasDot)
+            if (lblDisplay.Text.IndexOf('.') == -1)
             {
                 lblDisplay.Text += ".";
-                hasDot = true;
             }
         }
 
@@ -193,10 +190,6 @@ namespace CPE200Lab1
             {
                 string current = lblDisplay.Text;
                 char rightMost = current[current.Length - 1];
-                if(rightMost is '.')
-                {
-                    hasDot = false;
-                }
                 lblDisplay.Text = current.Substring(0, current.Length - 1);
                 if(lblDisplay.Text is "" || lblDisplay.Text is "-")
                 {
