@@ -33,6 +33,7 @@ namespace CPE200Lab1
             InitializeComponent();
 
             resetAll();
+            memoryReset();
             engine = new CalculatorEngine();
         }
 
@@ -206,7 +207,15 @@ namespace CPE200Lab1
 
         private void btnMemoryStoring_Click(object sender, EventArgs e)
         {
+            // Enable MC and MR button
+            if(memory == null)
+            {
+                btnMemoryClear.Enabled = true;
+                btnMemoryRecall.Enabled = true;
+            }
+
             string btnMemoryOption = ((Button)sender).Text;
+            // Edit memory
             switch (btnMemoryOption)
             {
                 case "MS":
@@ -223,16 +232,20 @@ namespace CPE200Lab1
 
         private void btnMemoryRecall_Click(object sender, EventArgs e)
         {
-            if(memory == null)
-            {
-                return;
-            }
             lblDisplay.Text = memory;
         }
 
         private void btnMemoryClear_Click(object sender, EventArgs e)
         {
+            memoryReset();
+        }
+
+        private void memoryReset()
+        {
             memory = null;
+            //Disable MC and MR button
+            btnMemoryClear.Enabled = false;
+            btnMemoryRecall.Enabled = false;
         }
     }
 }
