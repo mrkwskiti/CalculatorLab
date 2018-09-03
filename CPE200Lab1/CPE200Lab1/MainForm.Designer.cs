@@ -347,6 +347,7 @@
             this.btnMemoryRecall.TabIndex = 27;
             this.btnMemoryRecall.Text = "MR";
             this.btnMemoryRecall.UseVisualStyleBackColor = true;
+            this.btnMemoryRecall.Click += new System.EventHandler(this.btnMemoryRecall_Click);
             // 
             // btnMemoryClear
             // 
@@ -358,6 +359,7 @@
             this.btnMemoryClear.TabIndex = 26;
             this.btnMemoryClear.Text = "MC";
             this.btnMemoryClear.UseVisualStyleBackColor = true;
+            this.btnMemoryClear.Click += new System.EventHandler(this.btnMemoryClear_Click);
             // 
             // btnMemoryStore
             // 
@@ -369,6 +371,7 @@
             this.btnMemoryStore.TabIndex = 25;
             this.btnMemoryStore.Text = "MS";
             this.btnMemoryStore.UseVisualStyleBackColor = true;
+            this.btnMemoryStore.Click += new System.EventHandler(this.btnMemoryStoring_Click);
             // 
             // btnMemoryAdd
             // 
@@ -380,6 +383,7 @@
             this.btnMemoryAdd.TabIndex = 24;
             this.btnMemoryAdd.Text = "M+";
             this.btnMemoryAdd.UseVisualStyleBackColor = true;
+            this.btnMemoryAdd.Click += new System.EventHandler(this.btnMemoryStoring_Click);
             // 
             // btnMemorySubtract
             // 
@@ -391,6 +395,7 @@
             this.btnMemorySubtract.TabIndex = 28;
             this.btnMemorySubtract.Text = "M-";
             this.btnMemorySubtract.UseVisualStyleBackColor = true;
+            this.btnMemorySubtract.Click += new System.EventHandler(this.btnMemoryStoring_Click);
             // 
             // btnClearEntry
             // 

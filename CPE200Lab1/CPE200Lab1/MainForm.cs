@@ -17,6 +17,7 @@ namespace CPE200Lab1
         private bool isAfterEqual;
         private string firstOperand;
         private string operate;
+        private string memory;
         public CalculatorEngine engine;
 
         private void resetAll()
@@ -201,6 +202,37 @@ namespace CPE200Lab1
         private void btnClearEntry_Click(object sender, EventArgs e)
         {
             lblDisplay.Text = "0";
+        }
+
+        private void btnMemoryStoring_Click(object sender, EventArgs e)
+        {
+            string btnMemoryOption = ((Button)sender).Text;
+            switch (btnMemoryOption)
+            {
+                case "MS":
+                    memory = lblDisplay.Text;
+                    break;
+                case "M-":
+                    memory = engine.calculate("-", (memory == null) ? "0" : memory, lblDisplay.Text);
+                    break;
+                case "M+":
+                    memory = engine.calculate("+", (memory == null) ? "0" : memory, lblDisplay.Text);
+                    break;
+            }
+        }
+
+        private void btnMemoryRecall_Click(object sender, EventArgs e)
+        {
+            if(memory == null)
+            {
+                return;
+            }
+            lblDisplay.Text = memory;
+        }
+
+        private void btnMemoryClear_Click(object sender, EventArgs e)
+        {
+            memory = null;
         }
     }
 }
