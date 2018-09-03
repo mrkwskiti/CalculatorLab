@@ -197,5 +197,10 @@ namespace CPE200Lab1
                 }
             }
         }
+
+        private void btnClearEntry_Click(object sender, EventArgs e)
+        {
+            lblDisplay.Text = "0";
+        }
     }
 }
