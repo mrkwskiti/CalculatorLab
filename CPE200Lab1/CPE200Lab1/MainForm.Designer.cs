@@ -304,11 +304,11 @@
             this.lblDisplay.AutoSize = true;
             this.lblDisplay.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 54F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplay.Location = new System.Drawing.Point(18, 83);
+            this.lblDisplay.Location = new System.Drawing.Point(23, 91);
             this.lblDisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDisplay.MinimumSize = new System.Drawing.Size(548, 0);
+            this.lblDisplay.MinimumSize = new System.Drawing.Size(690, 0);
             this.lblDisplay.Name = "lblDisplay";
-            this.lblDisplay.Size = new System.Drawing.Size(548, 122);
+            this.lblDisplay.Size = new System.Drawing.Size(690, 122);
             this.lblDisplay.TabIndex = 20;
             this.lblDisplay.Text = "0";
             this.lblDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
