@@ -28,6 +28,11 @@ namespace CPE200Lab1
             isAfterEqual = false;
         }
 
+        private void resetDisplay()
+        {
+            isAfterOperater = true;
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -84,7 +89,7 @@ namespace CPE200Lab1
                 case "÷":
                     operate = btnOperator;
                     firstOperand = lblDisplay.Text;
-                    isAfterOperater = true;
+                    resetDisplay();
                     break;
                 case "%":
                     // your code here
@@ -228,11 +233,13 @@ namespace CPE200Lab1
                     memory = engine.calculate("+", (memory == null) ? "0" : memory, lblDisplay.Text);
                     break;
             }
+            resetDisplay();
         }
 
         private void btnMemoryRecall_Click(object sender, EventArgs e)
         {
             lblDisplay.Text = memory;
+            resetDisplay();
         }
 
         private void btnMemoryClear_Click(object sender, EventArgs e)
