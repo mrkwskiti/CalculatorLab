@@ -8,6 +8,17 @@ namespace CPE200Lab1
 {
     public class RPNCalculatorEngine : CalculatorEngine
     {
+        private bool isUnary(string str)
+        {
+            switch (str)
+            {
+                case "1/x":
+                case "√":
+                    return true;
+            }
+            return false;
+        }
+
         public string Process(string str)
         {
             // your code 
@@ -21,12 +32,27 @@ namespace CPE200Lab1
                 }
                 else if (isOperator(parts[i]))
                 {
-                if (operands.Count < 2)
+                    if (operands.Count < 2)
                     {
                         return "E";
                     }
-                string secondOperands = operands.Pop();
-                operands.Push(calculate(parts[i], operands.Pop(), secondOperands));
+                    string secondOperands = operands.Pop();
+                    operands.Push(calculate(parts[i], operands.Pop(), secondOperands));
+                }
+                else if(parts[i] == "%")
+                {
+                    if(parts[i+1] == "+" || parts[i+1] == "-")
+                    {
+                        operands.Push(calculate(parts[i], operands.Pop(), operands.Peek()));
+                    }
+                    else
+                    {
+                        operands.Push(calculate(parts[i], operands.Pop(), null));
+                    }
+                }
+                else if (isUnary(parts[i]))
+                {
+                    operands.Push(unaryCalculate(parts[i], operands.Pop()));
                 }
             }
             if(operands.Count == 1)
