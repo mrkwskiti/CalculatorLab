@@ -13,7 +13,7 @@ namespace CPE200Lab1
         /// </summary>
         /// <param name="str">The string of normal style.</param>
         /// <returns>The result of string.</returns>
-        public string Process(string str)
+        public string calculate(string str)
         {
             string[] parts = str.Split(' ');
             if (!(isNumber(parts[0]) && isOperator(parts[1]) && isNumber(parts[2])))

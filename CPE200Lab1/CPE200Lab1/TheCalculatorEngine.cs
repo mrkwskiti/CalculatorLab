@@ -44,7 +44,7 @@ namespace CPE200Lab1
         /// <param name="operand">The string of operand.</param>
         /// <param name="maxOutputSize">Define maximum number of digit that is result.</param>
         /// <returns>The result of string.</returns>
-        public string unaryCalculate(string operate, string operand, int maxOutputSize = 8)
+        public string calculate(string operate, string operand, int maxOutputSize = 8)
         {
             switch (operate)
             {

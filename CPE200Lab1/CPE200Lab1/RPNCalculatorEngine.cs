@@ -29,7 +29,7 @@ namespace CPE200Lab1
         /// </summary>
         /// <param name="str">The string of RPN style calculation.</param>
         /// <returns>The string of result.</returns>
-        public string Process(string str)
+        public string calculate(string str)
         {
             string[] parts = str.Split(' ');
             Stack<string> operands = new Stack<string>();
@@ -64,7 +64,7 @@ namespace CPE200Lab1
                 }
                 else if (isUnary(parts[i]))
                 {
-                    operands.Push(unaryCalculate(parts[i], operands.Pop()));
+                    operands.Push(calculate(parts[i], operands.Pop()));
                 }
             }
             if(operands.Count == 1)
