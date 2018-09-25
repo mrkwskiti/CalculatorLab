@@ -32,12 +32,15 @@ namespace CPE200Lab1
                 }
                 else if (isOperator(parts[i]))
                 {
-                    if (operands.Count < 2)
+                    try
+                    {
+                        string secondOperands = operands.Pop();
+                        operands.Push(calculate(parts[i], operands.Pop(), secondOperands));
+                    }
+                    catch (Exception e)
                     {
                         return "E";
                     }
-                    string secondOperands = operands.Pop();
-                    operands.Push(calculate(parts[i], operands.Pop(), secondOperands));
                 }
                 else if(parts[i] == "%")
                 {
@@ -63,4 +66,3 @@ namespace CPE200Lab1
         }
     }
 }
-
