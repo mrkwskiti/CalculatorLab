@@ -8,6 +8,11 @@ namespace CPE200Lab1
 {
     public class RPNCalculatorEngine : CalculatorEngine
     {
+        /// <summary>
+        /// Check that is unary operator.
+        /// </summary>
+        /// <param name="str">The string will be check.</param>
+        /// <returns>True if string is unary oprerator, otherwise false.</returns>
         private bool isUnary(string str)
         {
             switch (str)
@@ -19,6 +24,11 @@ namespace CPE200Lab1
             return false;
         }
 
+        /// <summary>
+        /// Calculate with RPN style calculation.
+        /// </summary>
+        /// <param name="str">The string of RPN style calculation.</param>
+        /// <returns>The string of result.</returns>
         public string Process(string str)
         {
             // your code 
