@@ -37,6 +37,25 @@ namespace CPE200Lab1
         }
 
         /// <summary>
+        /// Caculate with normal style calculation.
+        /// </summary>
+        /// <param name="str">The string of normal style.</param>
+        /// <returns>The result of string.</returns>
+        public string Process(string str)
+        {
+            string[] parts = str.Split(' ');
+            if (!(isNumber(parts[0]) && isOperator(parts[1]) && isNumber(parts[2])))
+            {
+                return "E";
+            }
+            else
+            {
+                return calculate(parts[1], parts[0], parts[2], 4);
+            }
+
+        }
+
+        /// <summary>
         /// Calculate(squre root, one over x) single string of number.
         /// </summary>
         /// <param name="operate">The stirng of operator for calculation</param>
