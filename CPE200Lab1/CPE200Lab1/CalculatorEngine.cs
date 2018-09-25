@@ -8,12 +8,22 @@ namespace CPE200Lab1
 {
     public class CalculatorEngine
     {
+        /// <summary>
+        /// Check that is string of number.
+        /// </summary>
+        /// <param name="str">String will be check.</param>
+        /// <returns>True if string is number, otherwise false.</returns>
         public bool isNumber(string str)
         {
             double retNum;
             return Double.TryParse(str, out retNum);
         }
 
+        /// <summary>
+        /// Check that is string of operator.
+        /// </summary>
+        /// <param name="str">String will be check.</param>
+        /// <returns>True if string is operator</returns>
         public bool isOperator(string str)
         {
             switch(str) {
@@ -26,18 +36,13 @@ namespace CPE200Lab1
             return false;
         }
 
-        public string Process(string str)
-        {
-            string[] parts = str.Split(' ');
-            if(!(isNumber(parts[0]) && isOperator(parts[1]) && isNumber(parts[2])))
-            {
-                return "E";
-            } else
-            {
-                return calculate(parts[1], parts[0], parts[2], 4);
-            }
-
-        }
+        /// <summary>
+        /// Calculate(squre root, one over x) single string of number.
+        /// </summary>
+        /// <param name="operate">The stirng of operator for calculation</param>
+        /// <param name="operand">The string of operand.</param>
+        /// <param name="maxOutputSize">Define maximum number of digit that is result.</param>
+        /// <returns>The result of string.</returns>
         public string unaryCalculate(string operate, string operand, int maxOutputSize = 8)
         {
             switch (operate)
@@ -56,6 +61,14 @@ namespace CPE200Lab1
             return "E";
         }
 
+        /// <summary>
+        /// Calculate(plus, minus, mutiply, divide) two string of number.
+        /// </summary>
+        /// <param name="operate">The string of operator.</param>
+        /// <param name="firstOperand">The string of first operand.</param>
+        /// <param name="secondOperand">The string of second operand.</param>
+        /// <param name="maxOutputSize">Define maximum number of digit that is result.</param>
+        /// <returns>The result of string.</returns>
         public string calculate(string operate, string firstOperand, string secondOperand, int maxOutputSize = 8)
         {
             switch (operate)
@@ -84,6 +97,12 @@ namespace CPE200Lab1
             return "E";
         }
 
+        /// <summary>
+        /// Fix result is less than maximum output size.
+        /// </summary>
+        /// <param name="result">The result will be fix.</param>
+        /// <param name="maxOutputSize">Define maximum munber of digits</param>
+        /// <returns>The stirng of result is fixed.</returns>
         private static string fixFractionalParts(double result, int maxOutputSize)
         {
             // split between integer part and fractional part
