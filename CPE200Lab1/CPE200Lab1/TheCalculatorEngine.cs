@@ -13,7 +13,7 @@ namespace CPE200Lab1
         /// </summary>
         /// <param name="str">String will be check.</param>
         /// <returns>True if string is number, otherwise false.</returns>
-        public bool isNumber(string str)
+        protected bool isNumber(string str)
         {
             double retNum;
             return Double.TryParse(str, out retNum);
@@ -24,7 +24,7 @@ namespace CPE200Lab1
         /// </summary>
         /// <param name="str">String will be check.</param>
         /// <returns>True if string is operator</returns>
-        public bool isOperator(string str)
+        protected bool isOperator(string str)
         {
             switch (str)
             {
@@ -32,6 +32,22 @@ namespace CPE200Lab1
                 case "-":
                 case "X":
                 case "÷":
+                    return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Check that is unary operator.
+        /// </summary>
+        /// <param name="str">The string will be check.</param>
+        /// <returns>True if string is unary oprerator, otherwise false.</returns>
+        protected bool isUnary(string str)
+        {
+            switch (str)
+            {
+                case "1/x":
+                case "√":
                     return true;
             }
             return false;
@@ -103,7 +119,7 @@ namespace CPE200Lab1
         /// <param name="result">The result will be fix.</param>
         /// <param name="maxOutputSize">Define maximum munber of digits</param>
         /// <returns>The stirng of result is fixed.</returns>
-        private static string fixFractionalParts(double result, int maxOutputSize)
+        private string fixFractionalParts(double result, int maxOutputSize)
         {
             // split between integer part and fractional part
             string[] parts = result.ToString().Split('.');

@@ -9,22 +9,6 @@ namespace CPE200Lab1
     public class RPNCalculatorEngine : TheCalculatorEngine
     {
         /// <summary>
-        /// Check that is unary operator.
-        /// </summary>
-        /// <param name="str">The string will be check.</param>
-        /// <returns>True if string is unary oprerator, otherwise false.</returns>
-        private bool isUnary(string str)
-        {
-            switch (str)
-            {
-                case "1/x":
-                case "√":
-                    return true;
-            }
-            return false;
-        }
-
-        /// <summary>
         /// Calculate with RPN style calculation.
         /// </summary>
         /// <param name="str">The string of RPN style calculation.</param>
@@ -32,19 +16,19 @@ namespace CPE200Lab1
         public string calculate(string str)
         {
             string[] parts = str.Split(' ');
-            Stack<string> operands = new Stack<string>();
+            Stack<string> myStack = new Stack<string>();
             for (int i = 0; i < parts.Length; i++)
             {
                 if (isNumber(parts[i]))
                 {
-                    operands.Push(parts[i]);
+                    myStack.Push(parts[i]);
                 }
                 else if (isOperator(parts[i]))
                 {
                     try
                     {
-                        string secondOperands = operands.Pop();
-                        operands.Push(calculate(parts[i], operands.Pop(), secondOperands));
+                        string secondOperands = myStack.Pop();
+                        myStack.Push(calculate(parts[i], myStack.Pop(), secondOperands));
                     }
                     catch (Exception e)
                     {
@@ -55,21 +39,21 @@ namespace CPE200Lab1
                 {
                     if(parts[i+1] == "+" || parts[i+1] == "-")
                     {
-                        operands.Push(calculate(parts[i], operands.Pop(), operands.Peek()));
+                        myStack.Push(calculate(parts[i], myStack.Pop(), myStack.Peek()));
                     }
                     else
                     {
-                        operands.Push(calculate(parts[i], operands.Pop(), null));
+                        myStack.Push(calculate(parts[i], myStack.Pop(), null));
                     }
                 }
                 else if (isUnary(parts[i]))
                 {
-                    operands.Push(calculate(parts[i], operands.Pop()));
+                    myStack.Push(calculate(parts[i], myStack.Pop()));
                 }
             }
-            if(operands.Count == 1)
+            if(myStack.Count == 1)
             {
-                return operands.Pop();
+                return myStack.Pop();
             }
             return "E";
         }
