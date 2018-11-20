@@ -37,5 +37,10 @@ namespace CPE200Lab1
         {
             ((CalculatorModel)m).PerFormSign();
         }
+
+        public void UnaryPerform(string unary)
+        {
+            ((CalculatorModel)m).PerformUnary(unary);
+        }
     }
 }

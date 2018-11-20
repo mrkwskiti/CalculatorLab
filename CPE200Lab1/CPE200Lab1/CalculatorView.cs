@@ -63,5 +63,10 @@ namespace CPE200Lab1
         {
             controller.SignPerform();
         }
+
+        private void btnUnary_Click(object sender, EventArgs e)
+        {
+            controller.UnaryPerform(((Button)sender).Text);
+        }
     }
 }

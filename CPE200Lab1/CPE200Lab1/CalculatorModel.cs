@@ -99,5 +99,11 @@ namespace CPE200Lab1
             _lblDisplay = _engine.calculate("X", _lblDisplay, "-1");
             NotifyAll();
         }
+
+        public void PerformUnary(string unary)
+        {
+            _lblDisplay = _engine.calculate(unary, _lblDisplay);
+            NotifyAll();
+        }
     }
 }
