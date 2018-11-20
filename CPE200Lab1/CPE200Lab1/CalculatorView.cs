@@ -73,5 +73,10 @@ namespace CPE200Lab1
         {
             controller.PercentPerform();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            controller.BackPerform();
+        }
     }
 }

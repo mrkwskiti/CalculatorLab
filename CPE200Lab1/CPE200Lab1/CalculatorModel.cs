@@ -121,5 +121,27 @@ namespace CPE200Lab1
             }
             NotifyAll();
         }
+
+        public void PerformBack()
+        {
+            if (isOperClicked)
+            {
+                return;
+            }
+            if(_lblDisplay != "0")
+            {
+                char rightmost = _lblDisplay[_lblDisplay.Length - 1];
+                if(rightmost == '.')
+                {
+                    hasDot = false;
+                }
+                _lblDisplay = _lblDisplay.Substring(0, _lblDisplay.Length - 1);
+                if(_lblDisplay == "" || _lblDisplay == "-")
+                {
+                    _lblDisplay = "0";
+                }
+                NotifyAll();
+            }
+        }
     }
 }

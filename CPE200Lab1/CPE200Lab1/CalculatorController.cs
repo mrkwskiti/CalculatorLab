@@ -47,5 +47,10 @@ namespace CPE200Lab1
         {
             ((CalculatorModel)m).PerformPercent();
         }
+
+        public void BackPerform()
+        {
+            ((CalculatorModel)m).PerformBack();
+        }
     }
 }
