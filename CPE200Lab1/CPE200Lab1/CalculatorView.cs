@@ -68,5 +68,10 @@ namespace CPE200Lab1
         {
             controller.UnaryPerform(((Button)sender).Text);
         }
+
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+            controller.PercentPerform();
+        }
     }
 }

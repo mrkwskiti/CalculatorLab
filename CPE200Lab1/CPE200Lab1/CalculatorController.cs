@@ -42,5 +42,10 @@ namespace CPE200Lab1
         {
             ((CalculatorModel)m).PerformUnary(unary);
         }
+
+        public void PercentPerform()
+        {
+            ((CalculatorModel)m).PerformPercent();
+        }
     }
 }

@@ -105,5 +105,18 @@ namespace CPE200Lab1
             _lblDisplay = _engine.calculate(unary, _lblDisplay);
             NotifyAll();
         }
+
+        public void PerformPercent()
+        {
+            if (isSetFirstOperand())
+            {
+                _lblDisplay = _engine.calculate("%", _firstOperand, _lblDisplay);
+            }
+            else
+            {
+                PerformUnary("%");
+            }
+            NotifyAll();
+        }
     }
 }
