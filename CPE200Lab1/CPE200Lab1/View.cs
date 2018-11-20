@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace CPE200Lab1
 {
-    public class View
+    public interface View
     {
-        // The `virtual` keyword allows the method to be overridden
-        public void Notify(Model m)
-        {
-            throw new NotImplementedException();
-        }
+        void Notify(Model m);
     }
 }
