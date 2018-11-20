@@ -45,8 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorController.cs" />
     <Compile Include="CalculatorEngine.cs" />
     <Compile Include="CalculatorModel.cs" />
+    <Compile Include="CalculatorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalculatorView.Designer.cs">
+      <DependentUpon>CalculatorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="ExtendForm.cs">
       <SubType>Form</SubType>
@@ -66,6 +73,9 @@
     <Compile Include="RPNCalculatorEngine.cs" />
     <Compile Include="TheCalculatorEngine.cs" />
     <Compile Include="View.cs" />
+    <EmbeddedResource Include="CalculatorView.resx">
+      <DependentUpon>CalculatorView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExtendForm.resx">
       <DependentUpon>ExtendForm.cs</DependentUpon>
     </EmbeddedResource>
