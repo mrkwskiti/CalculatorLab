@@ -93,5 +93,11 @@ namespace CPE200Lab1
             hasDot = true;
             NotifyAll();
         }
+
+        public void PerFormSign()
+        {
+            _lblDisplay = _engine.calculate("X", _lblDisplay, "-1");
+            NotifyAll();
+        }
     }
 }

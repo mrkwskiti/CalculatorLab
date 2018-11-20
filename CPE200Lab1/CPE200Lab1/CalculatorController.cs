@@ -32,5 +32,10 @@ namespace CPE200Lab1
         {
             ((CalculatorModel)m).PeformDot();
         }
+
+        public void SignPerform()
+        {
+            ((CalculatorModel)m).PerFormSign();
+        }
     }
 }

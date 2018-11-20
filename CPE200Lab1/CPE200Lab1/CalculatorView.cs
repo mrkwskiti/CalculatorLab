@@ -58,5 +58,10 @@ namespace CPE200Lab1
         {
             controller.DotPerform();
         }
+
+        private void btnSign_Click(object sender, EventArgs e)
+        {
+            controller.SignPerform();
+        }
     }
 }
