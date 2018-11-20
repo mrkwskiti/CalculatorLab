@@ -48,5 +48,10 @@ namespace CPE200Lab1
         {
             controller.EqualPerform();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            controller.ClearPerform();
+        }
     }
 }

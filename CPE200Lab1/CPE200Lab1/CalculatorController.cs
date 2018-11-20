@@ -22,5 +22,10 @@ namespace CPE200Lab1
         {
             ((CalculatorModel)m).PerformEqual();
         }
+
+        public void ClearPerform()
+        {
+            ((CalculatorModel)m).PerformClear();
+        }
     }
 }

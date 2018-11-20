@@ -72,5 +72,11 @@ namespace CPE200Lab1
             _lblDisplay = _firstOperand;
             NotifyAll();
         }
+
+        public void PerformClear()
+        {
+            resetAll();
+            NotifyAll();
+        }
     }
 }
