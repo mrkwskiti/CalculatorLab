@@ -130,8 +130,7 @@ namespace CPE200Lab1
             }
             if(_lblDisplay != "0")
             {
-                char rightmost = _lblDisplay[_lblDisplay.Length - 1];
-                if(rightmost == '.')
+                if(_lblDisplay[_lblDisplay.Length - 1] == '.')
                 {
                     hasDot = false;
                 }
