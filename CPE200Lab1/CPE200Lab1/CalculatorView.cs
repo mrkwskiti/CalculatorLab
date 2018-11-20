@@ -38,5 +38,15 @@ namespace CPE200Lab1
         {
             controller.BtnNumberPerform(((Button)sender).Text);
         }
+
+        private void btnOper_Click(object sender, EventArgs e)
+        {
+            controller.OperatorPerform(((Button)sender).Text);
+        }
+
+        private void btnEqual_Click(object sender, EventArgs e)
+        {
+            controller.EqualPerform();
+        }
     }
 }

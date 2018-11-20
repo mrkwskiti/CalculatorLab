@@ -10,7 +10,8 @@ namespace CPE200Lab1
     {
         protected string _lblDisplay;
         protected string _firstOperand;
-        protected int _oper;
+        protected string operate;
+        protected bool isOperClicked;
         protected TheCalculatorEngine _engine;
 
         public CalculatorModel()
@@ -22,6 +23,8 @@ namespace CPE200Lab1
         public void resetAll()
         {
             _firstOperand = null;
+            operate = null;
+            isOperClicked = false;
             _lblDisplay = "0";
         }
 
@@ -35,18 +38,38 @@ namespace CPE200Lab1
             return _lblDisplay;
         }
 
-        public string getDisplay()
-        {
-            return _firstOperand;
-        }
-
         public void PerformBtnNumber(string num)
         {
-            if(_lblDisplay == "0")
+            if(_lblDisplay == "0" || isOperClicked)
             {
                 _lblDisplay = "";
             }
             _lblDisplay += num;
+            NotifyAll();
+        }
+
+        public void PerformOperate(string oper)
+        {
+            operate = oper;
+            if (!isSetFirstOperand())
+            {
+                _firstOperand = _lblDisplay;
+            }
+            else
+            {
+                PerformEqual();
+            }
+            isOperClicked = true;
+        }
+
+        public void PerformEqual()
+        {
+            if(operate == null)
+            {
+                return;
+            }
+            _firstOperand = _engine.calculate(operate, _firstOperand, _lblDisplay);
+            _lblDisplay = _firstOperand;
             NotifyAll();
         }
     }

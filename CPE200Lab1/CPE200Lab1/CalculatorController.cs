@@ -12,5 +12,15 @@ namespace CPE200Lab1
         {
             ((CalculatorModel)m).PerformBtnNumber(num);
         }
+
+        public void OperatorPerform(string oper)
+        {
+            ((CalculatorModel)m).PerformOperate(oper);
+        }
+
+        public void EqualPerform()
+        {
+            ((CalculatorModel)m).PerformEqual();
+        }
     }
 }
