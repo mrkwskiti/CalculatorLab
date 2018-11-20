@@ -12,6 +12,7 @@ namespace CPE200Lab1
         protected string _firstOperand;
         protected string operate;
         protected bool isOperClicked;
+        protected bool hasDot;
         protected TheCalculatorEngine _engine;
 
         public CalculatorModel()
@@ -25,6 +26,7 @@ namespace CPE200Lab1
             _firstOperand = null;
             operate = null;
             isOperClicked = false;
+            hasDot = false;
             _lblDisplay = "0";
         }
 
@@ -43,6 +45,8 @@ namespace CPE200Lab1
             if(_lblDisplay == "0" || isOperClicked)
             {
                 _lblDisplay = "";
+                isOperClicked = false;
+                hasDot = false;
             }
             _lblDisplay += num;
             NotifyAll();
@@ -76,6 +80,17 @@ namespace CPE200Lab1
         public void PerformClear()
         {
             resetAll();
+            NotifyAll();
+        }
+
+        public void PeformDot()
+        {
+            if (hasDot)
+            {
+                return;
+            }
+            _lblDisplay += ".";
+            hasDot = true;
             NotifyAll();
         }
     }

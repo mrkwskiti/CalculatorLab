@@ -27,5 +27,10 @@ namespace CPE200Lab1
         {
             ((CalculatorModel)m).PerformClear();
         }
+
+        public void DotPerform()
+        {
+            ((CalculatorModel)m).PeformDot();
+        }
     }
 }

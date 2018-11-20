@@ -53,5 +53,10 @@ namespace CPE200Lab1
         {
             controller.ClearPerform();
         }
+
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            controller.DotPerform();
+        }
     }
 }
