@@ -9,16 +9,16 @@ namespace CPE200Lab1
 {
     public class Controller
     {
-        protected ArrayList mList;
+        protected Model m;
 
         public Controller()
         {
-            mList = new ArrayList();
+
         }
 
         public void AddModel(Model m)
         {
-            mList.Add(m);
+            this.m = m;
         }
 
         // The `virtual` keyword allows the method to be overridden

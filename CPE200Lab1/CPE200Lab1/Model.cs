@@ -9,24 +9,21 @@ namespace CPE200Lab1
 {
     public class Model
     {
-        protected ArrayList oList;
+        protected View v;
 
         public Model()
         {
-            oList = new ArrayList();
+
         }
 
         public void NotifyAll()
         {
-            foreach(View m in oList)
-            {
-                m.Notify(this);
-            }
+            v.Notify(this);
         }
         
-        public void AttachObserver(View m)
+        public void AttachObserver(View v)
         {
-            oList.Add(m);
+            this.v = v;
         }
     }
 }
