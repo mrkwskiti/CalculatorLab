@@ -48,7 +48,10 @@ namespace CPE200Lab1
                 isOperClicked = false;
                 hasDot = false;
             }
-            _lblDisplay += num;
+            if(_lblDisplay.Length < 8)
+            {
+                _lblDisplay += num;
+            }
             NotifyAll();
         }
 
