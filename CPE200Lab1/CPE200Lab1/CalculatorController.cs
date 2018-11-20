@@ -8,5 +8,9 @@ namespace CPE200Lab1
 {
     public class CalculatorController : Controller
     {
+        public void BtnNumberPerform(string num)
+        {
+            ((CalculatorModel)m).PerformBtnNumber(num);
+        }
     }
 }
