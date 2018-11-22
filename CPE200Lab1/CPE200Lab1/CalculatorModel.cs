@@ -21,6 +21,11 @@ namespace CPE200Lab1
             resetAll();
         }
 
+        public bool isError()
+        {
+            return _lblDisplay == "Error";
+        }
+
         public void resetAll()
         {
             _firstOperand = null;
@@ -42,6 +47,10 @@ namespace CPE200Lab1
 
         public void PerformBtnNumber(string num)
         {
+            if (isError())
+            {
+                return;
+            }
             if(_lblDisplay == "0" || isOperClicked)
             {
                 _lblDisplay = "";
@@ -58,7 +67,7 @@ namespace CPE200Lab1
         public void PerformOperate(string oper)
         {
             operate = oper;
-            if (isOperClicked)
+            if (isOperClicked || isError())
             {
                 return;
             }
@@ -75,11 +84,15 @@ namespace CPE200Lab1
 
         public void PerformEqual()
         {
-            if(operate == null)
+            if(operate == null || isError())
             {
                 return;
             }
             _firstOperand = _engine.calculate(operate, _firstOperand, _lblDisplay);
+            if(_firstOperand.Length > 8)
+            {
+                _firstOperand = "Error";
+            }
             _lblDisplay = _firstOperand;
             NotifyAll();
         }
@@ -92,7 +105,7 @@ namespace CPE200Lab1
 
         public void PeformDot()
         {
-            if (hasDot)
+            if (hasDot || isError())
             {
                 return;
             }
@@ -103,18 +116,30 @@ namespace CPE200Lab1
 
         public void PerFormSign()
         {
+            if (isError())
+            {
+                return;
+            }
             _lblDisplay = _engine.calculate("X", _lblDisplay, "-1");
             NotifyAll();
         }
 
         public void PerformUnary(string unary)
         {
+            if (isError())
+            {
+                return;
+            }
             _lblDisplay = _engine.calculate(unary, _lblDisplay);
             NotifyAll();
         }
 
         public void PerformPercent()
         {
+            if (isError())
+            {
+                return;
+            }
             if (isSetFirstOperand())
             {
                 _lblDisplay = _engine.calculate("%", _firstOperand, _lblDisplay);
@@ -128,7 +153,7 @@ namespace CPE200Lab1
 
         public void PerformBack()
         {
-            if (isOperClicked)
+            if (isOperClicked || isError())
             {
                 return;
             }
