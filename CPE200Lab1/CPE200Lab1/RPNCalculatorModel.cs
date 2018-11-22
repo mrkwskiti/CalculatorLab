@@ -82,6 +82,12 @@ namespace CPE200Lab1
             _lblDisplay += oper;
             NotifyAll();
         }
+
+        public void PerformEqual(string str)
+        {
+            _lblDisplay = engine.calculate(str);
+            NotifyAll();
+        }
         
     }
 }

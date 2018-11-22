@@ -42,5 +42,12 @@ namespace CPE200Lab1
         private void btnOper_Click(object sender, EventArgs e) => controller.OperPerform(((Button)sender).Text);
 
         private void btnDot_Click(object sender, EventArgs e) => controller.DotPerform();
+
+        private void btnEqual_Click(object sender, EventArgs e) => controller.EqualPerform(this.lblDisplay.Text);
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
