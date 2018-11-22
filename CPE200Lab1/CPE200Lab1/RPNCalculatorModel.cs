@@ -9,7 +9,6 @@ namespace CPE200Lab1
     class RPNCalculatorModel : Model
     {
         string _lblDisplay;
-        bool hasDot;
         RPNCalculatorEngine engine;
 
         // set default method is rightmostDisplay
@@ -30,7 +29,6 @@ namespace CPE200Lab1
         public void ResetAll()
         {
             _lblDisplay = "0";
-            hasDot = false;
         }
 
         public string GetDisplay()
@@ -54,12 +52,7 @@ namespace CPE200Lab1
 
         public void PerformDot()
         {
-            if (hasDot)
-            {
-                return;
-            }
             _lblDisplay += ".";
-            hasDot = true;
             NotifyAll();
         }
         
