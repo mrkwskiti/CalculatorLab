@@ -37,7 +37,7 @@ namespace CPE200Lab1
 
         public void PerformNumber(string num)
         {
-            if (!engine.isNumber(rightmostDisplay()) && !isDot(rightmostDisplay()))
+            if (!engine.isNumber(rightmostDisplay()) && !isDot(rightmostDisplay()) && !isSpace(rightmostDisplay()))
             {
                 _lblDisplay += " ";
             }
