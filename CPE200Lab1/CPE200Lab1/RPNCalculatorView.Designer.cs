@@ -297,6 +297,7 @@
             this.btnSpace.TabIndex = 41;
             this.btnSpace.Text = "Space";
             this.btnSpace.UseVisualStyleBackColor = true;
+            this.btnSpace.Click += new System.EventHandler(this.btnSpace_Click);
             // 
             // btnOneOverX
             // 

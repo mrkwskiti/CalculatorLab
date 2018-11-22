@@ -11,7 +11,13 @@ namespace CPE200Lab1
         string _lblDisplay;
         bool hasDot;
         RPNCalculatorEngine engine;
-        
+
+        protected bool isDot(string txt) => txt == ".";
+
+        protected bool isSpace(string txt) => txt == " ";
+
+        protected string rightmostDisplay() => _lblDisplay[_lblDisplay.Length - 1].ToString();
+
         public RPNCalculatorModel()
         {
             engine = new RPNCalculatorEngine();
@@ -29,8 +35,6 @@ namespace CPE200Lab1
             return _lblDisplay;
         }
 
-        public bool isDot(string text) => text == ".";
-
         public void PerformNumber(string num)
         {
             if(_lblDisplay == "0")
@@ -38,6 +42,27 @@ namespace CPE200Lab1
                 _lblDisplay = "";
             }
             _lblDisplay += num;
+            NotifyAll();
+        }
+
+        public void PerformDot()
+        {
+            if (hasDot)
+            {
+                return;
+            }
+            _lblDisplay += ".";
+            hasDot = true;
+            NotifyAll();
+        }
+        
+        public void PerformSpace()
+        {
+            if (isSpace(rightmostDisplay()))
+            {
+                return;
+            }
+            _lblDisplay += " ";
             NotifyAll();
         }
         
