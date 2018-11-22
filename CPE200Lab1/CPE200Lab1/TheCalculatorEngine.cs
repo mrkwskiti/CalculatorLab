@@ -13,7 +13,7 @@ namespace CPE200Lab1
         /// </summary>
         /// <param name="str">String will be check.</param>
         /// <returns>True if string is number, otherwise false.</returns>
-        protected bool isNumber(string str)
+        public bool isNumber(string str)
         {
             double retNum;
             return Double.TryParse(str, out retNum);
@@ -24,7 +24,7 @@ namespace CPE200Lab1
         /// </summary>
         /// <param name="str">String will be check.</param>
         /// <returns>True if string is operator</returns>
-        protected bool isOperator(string str)
+        public bool isOperator(string str)
         {
             switch (str)
             {
@@ -42,7 +42,7 @@ namespace CPE200Lab1
         /// </summary>
         /// <param name="str">The string will be check.</param>
         /// <returns>True if string is unary oprerator, otherwise false.</returns>
-        protected bool isUnary(string str)
+        public bool isUnary(string str)
         {
             switch (str)
             {
