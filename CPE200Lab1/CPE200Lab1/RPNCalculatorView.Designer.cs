@@ -86,6 +86,7 @@
             this.btnDivide.TabIndex = 36;
             this.btnDivide.Text = "÷";
             this.btnDivide.UseVisualStyleBackColor = true;
+            this.btnDivide.Click += new System.EventHandler(this.btnOper_Click);
             // 
             // btnEqual
             // 
@@ -142,6 +143,7 @@
             this.btnPlus.TabIndex = 31;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.btnOper_Click);
             // 
             // btn3
             // 
@@ -189,6 +191,7 @@
             this.btnMinus.TabIndex = 27;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.btnOper_Click);
             // 
             // btn6
             // 
@@ -236,6 +239,7 @@
             this.btnMultiply.TabIndex = 23;
             this.btnMultiply.Text = "X";
             this.btnMultiply.UseVisualStyleBackColor = true;
+            this.btnMultiply.Click += new System.EventHandler(this.btnOper_Click);
             // 
             // btn9
             // 
@@ -309,6 +313,7 @@
             this.btnOneOverX.TabIndex = 44;
             this.btnOneOverX.Text = "1/x";
             this.btnOneOverX.UseVisualStyleBackColor = true;
+            this.btnOneOverX.Click += new System.EventHandler(this.btnOper_Click);
             // 
             // btnSqrt
             // 
@@ -320,6 +325,7 @@
             this.btnSqrt.TabIndex = 43;
             this.btnSqrt.Text = "√";
             this.btnSqrt.UseVisualStyleBackColor = true;
+            this.btnSqrt.Click += new System.EventHandler(this.btnOper_Click);
             // 
             // btnPercent
             // 
@@ -331,6 +337,7 @@
             this.btnPercent.TabIndex = 42;
             this.btnPercent.Text = "%";
             this.btnPercent.UseVisualStyleBackColor = true;
+            this.btnPercent.Click += new System.EventHandler(this.btnOper_Click);
             // 
             // RPNCalculatorView
             // 

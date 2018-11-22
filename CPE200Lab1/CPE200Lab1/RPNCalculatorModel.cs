@@ -65,6 +65,16 @@ namespace CPE200Lab1
             _lblDisplay += " ";
             NotifyAll();
         }
+
+        public void PerformOperator(string oper)
+        {
+            if (!isSpace(rightmostDisplay()))
+            {
+                _lblDisplay += " ";
+            }
+            _lblDisplay += oper;
+            NotifyAll();
+        }
         
     }
 }

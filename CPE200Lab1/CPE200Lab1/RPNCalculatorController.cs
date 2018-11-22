@@ -14,5 +14,7 @@ namespace CPE200Lab1
         public void DotPerform() => ((RPNCalculatorModel)m).PerformDot();
 
         public void SpacePerform() => ((RPNCalculatorModel)m).PerformSpace();
+
+        public void OperPerform(string oper) => ((RPNCalculatorModel)m).PerformOperator(oper);
     }
 }
