@@ -9,6 +9,7 @@ namespace CPE200Lab1
     class RPNCalculatorModel : Model
     {
         string _lblDisplay;
+        bool hasDot;
         RPNCalculatorEngine engine;
         
         public RPNCalculatorModel()
@@ -20,6 +21,7 @@ namespace CPE200Lab1
         public void ResetAll()
         {
             _lblDisplay = "0";
+            hasDot = false;
         }
 
         public string GetDisplay()
@@ -27,6 +29,17 @@ namespace CPE200Lab1
             return _lblDisplay;
         }
 
+        public bool isDot(string text) => text == ".";
+
+        public void PerformNumber(string num)
+        {
+            if(_lblDisplay == "0")
+            {
+                _lblDisplay = "";
+            }
+            _lblDisplay += num;
+            NotifyAll();
+        }
         
     }
 }

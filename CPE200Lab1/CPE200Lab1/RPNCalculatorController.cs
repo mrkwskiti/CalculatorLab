@@ -8,5 +8,7 @@ namespace CPE200Lab1
 {
     class RPNCalculatorController : Controller
     {
+
+        public void NumberPerform(string num) => ((RPNCalculatorModel)m).PerformNumber(num);
     }
 }

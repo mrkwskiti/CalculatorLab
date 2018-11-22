@@ -34,5 +34,7 @@ namespace CPE200Lab1
         {
             this.lblDisplay.Text = lblDisplay;
         }
+
+        private void btnNumber_Click(object sender, EventArgs e) => controller.NumberPerform(((Button)sender).Text);
     }
 }
