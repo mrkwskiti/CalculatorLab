@@ -58,6 +58,10 @@ namespace CPE200Lab1
         public void PerformOperate(string oper)
         {
             operate = oper;
+            if (isOperClicked)
+            {
+                return;
+            }
             if (!isSetFirstOperand())
             {
                 _firstOperand = _lblDisplay;
@@ -142,5 +146,7 @@ namespace CPE200Lab1
                 NotifyAll();
             }
         }
+
+
     }
 }
