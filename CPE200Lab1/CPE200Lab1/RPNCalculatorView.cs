@@ -40,5 +40,7 @@ namespace CPE200Lab1
         private void btnSpace_Click(object sender, EventArgs e) => controller.SpacePerform();
 
         private void btnOper_Click(object sender, EventArgs e) => controller.OperPerform(((Button)sender).Text);
+
+        private void btnDot_Click(object sender, EventArgs e) => controller.DotPerform();
     }
 }
