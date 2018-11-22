@@ -12,14 +12,27 @@ namespace CPE200Lab1
 {
     public partial class RPNCalculatorView : Form ,View
     {
+        RPNCalculatorModel model;
+        RPNCalculatorController controller;
+
         public RPNCalculatorView()
         {
             InitializeComponent();
+            model = new RPNCalculatorModel();
+            model.AttachObserver(this);
+            controller = new RPNCalculatorController();
+            controller.AddModel(model);
+            Notify(model);
         }
 
         public void Notify(Model m)
         {
+            UpdateDisplay(((RPNCalculatorModel)m).GetDisplay());
+        }
 
+        private void UpdateDisplay(string lblDisplay)
+        {
+            this.lblDisplay.Text = lblDisplay;
         }
     }
 }
