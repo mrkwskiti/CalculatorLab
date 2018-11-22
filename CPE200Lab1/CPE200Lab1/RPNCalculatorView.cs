@@ -47,7 +47,7 @@ namespace CPE200Lab1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            controller.ClearPerform();
         }
     }
 }

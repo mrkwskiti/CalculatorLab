@@ -81,6 +81,11 @@ namespace CPE200Lab1
             _lblDisplay = engine.calculate(str);
             NotifyAll();
         }
-        
+
+        public void PerformClear()
+        {
+            ResetAll();
+            NotifyAll();
+        }
     }
 }
