@@ -89,6 +89,11 @@ namespace CPE200Lab1
             NotifyAll();
         }
 
+        public void PerformMemoryClear()
+        {
+            memory = null;
+        }
+
         public void PerformOperate(string oper)
         {
             operate = oper;

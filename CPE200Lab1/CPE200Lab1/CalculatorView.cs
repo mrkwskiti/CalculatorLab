@@ -88,5 +88,10 @@ namespace CPE200Lab1
         {
             controller.RecallMemoryPeform();
         }
+
+        private void btnMC_Click(object sender, EventArgs e)
+        {
+            controller.ClearMemoryPerform();
+        }
     }
 }

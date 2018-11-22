@@ -321,6 +321,7 @@
             this.btnMC.TabIndex = 21;
             this.btnMC.Text = "MC";
             this.btnMC.UseVisualStyleBackColor = true;
+            this.btnMC.Click += new System.EventHandler(this.btnMC_Click);
             // 
             // btnMR
             // 

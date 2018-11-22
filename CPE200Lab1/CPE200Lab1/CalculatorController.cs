@@ -62,5 +62,10 @@ namespace CPE200Lab1
         {
             ((CalculatorModel)m).PerformMemoryRecall();
         }
+
+        public void ClearMemoryPerform()
+        {
+            ((CalculatorModel)m).PerformMemoryClear();
+        }
     }
 }
