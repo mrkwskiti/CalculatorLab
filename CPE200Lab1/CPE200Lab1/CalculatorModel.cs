@@ -11,6 +11,7 @@ namespace CPE200Lab1
         protected string _lblDisplay;
         protected string _firstOperand;
         protected string operate;
+        protected string memory;
         protected bool isOperClicked;
         protected bool hasDot;
         protected TheCalculatorEngine _engine;
@@ -61,6 +62,30 @@ namespace CPE200Lab1
             {
                 _lblDisplay += num;
             }
+            NotifyAll();
+        }
+
+        public void PerformModifyMemory(string oper)
+        {
+            if (isError())
+            {
+                return;
+            }
+            if(memory == null)
+            {
+                memory = "0";
+            }
+            memory = _engine.calculate(oper, memory, _lblDisplay);
+            isOperClicked = true;
+        }
+
+        public void PerformMemoryRecall()
+        {
+            if(memory == null)
+            {
+                return;
+            }
+            _lblDisplay = memory;
             NotifyAll();
         }
 

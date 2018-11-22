@@ -78,5 +78,15 @@ namespace CPE200Lab1
         {
             controller.BackPerform();
         }
+
+        private void btnModifyMemory_Click(object sender, EventArgs e)
+        {
+            controller.ModifyMemory(((Button)sender).Text[1].ToString());
+        }
+
+        private void btnMR_Click(object sender, EventArgs e)
+        {
+            controller.RecallMemoryPeform();
+        }
     }
 }

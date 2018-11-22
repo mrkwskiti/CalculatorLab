@@ -332,6 +332,7 @@
             this.btnMR.TabIndex = 22;
             this.btnMR.Text = "MR";
             this.btnMR.UseVisualStyleBackColor = true;
+            this.btnMR.Click += new System.EventHandler(this.btnMR_Click);
             // 
             // btnMP
             // 
@@ -343,6 +344,7 @@
             this.btnMP.TabIndex = 23;
             this.btnMP.Text = "M+";
             this.btnMP.UseVisualStyleBackColor = true;
+            this.btnMP.Click += new System.EventHandler(this.btnModifyMemory_Click);
             // 
             // btnMM
             // 
@@ -354,6 +356,7 @@
             this.btnMM.TabIndex = 24;
             this.btnMM.Text = "M-";
             this.btnMM.UseVisualStyleBackColor = true;
+            this.btnMM.Click += new System.EventHandler(this.btnModifyMemory_Click);
             // 
             // btnSqr
             // 
