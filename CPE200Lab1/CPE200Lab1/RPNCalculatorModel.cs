@@ -12,8 +12,11 @@ namespace CPE200Lab1
         bool hasDot;
         RPNCalculatorEngine engine;
 
+        // set default method is rightmostDisplay
+        protected bool isDot() => this.isDot(rightmostDisplay());
         protected bool isDot(string txt) => txt == ".";
 
+        protected bool isSpace() => this.isSpace(rightmostDisplay());
         protected bool isSpace(string txt) => txt == " ";
 
         protected string rightmostDisplay() => _lblDisplay[_lblDisplay.Length - 1].ToString();
@@ -37,7 +40,7 @@ namespace CPE200Lab1
 
         public void PerformNumber(string num)
         {
-            if (!engine.isNumber(rightmostDisplay()) && !isDot(rightmostDisplay()) && !isSpace(rightmostDisplay()))
+            if (!engine.isNumber(rightmostDisplay()) && !isDot() && !isSpace())
             {
                 _lblDisplay += " ";
             }
@@ -62,7 +65,7 @@ namespace CPE200Lab1
         
         public void PerformSpace()
         {
-            if (isSpace(rightmostDisplay()))
+            if (isSpace())
             {
                 return;
             }
@@ -72,7 +75,7 @@ namespace CPE200Lab1
 
         public void PerformOperator(string oper)
         {
-            if (!isSpace(rightmostDisplay()))
+            if (!isSpace())
             {
                 _lblDisplay += " ";
             }
