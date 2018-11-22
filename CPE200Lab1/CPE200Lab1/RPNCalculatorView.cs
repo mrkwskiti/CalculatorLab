@@ -45,9 +45,8 @@ namespace CPE200Lab1
 
         private void btnEqual_Click(object sender, EventArgs e) => controller.EqualPerform(this.lblDisplay.Text);
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            controller.ClearPerform();
-        }
+        private void btnClear_Click(object sender, EventArgs e) => controller.ClearPerform();
+
+        private void btnBack_Click(object sender, EventArgs e) => controller.BackPerform();
     }
 }

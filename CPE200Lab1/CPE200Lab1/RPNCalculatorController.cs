@@ -20,5 +20,7 @@ namespace CPE200Lab1
         public void EqualPerform(string str) => ((RPNCalculatorModel)m).PerformEqual(str);
 
         public void ClearPerform() => ((RPNCalculatorModel)m).PerformClear();
+
+        public void BackPerform() => ((RPNCalculatorModel)m).PerformBack();
     }
 }

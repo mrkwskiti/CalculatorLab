@@ -87,5 +87,16 @@ namespace CPE200Lab1
             ResetAll();
             NotifyAll();
         }
+
+        public void PerformBack()
+        {
+            _lblDisplay = _lblDisplay.Substring(0, _lblDisplay.Length - 1);
+            if(_lblDisplay == "")
+            {
+                _lblDisplay = "0";
+            }
+
+            NotifyAll();
+        }
     }
 }
